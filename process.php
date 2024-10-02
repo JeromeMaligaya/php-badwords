@@ -20,8 +20,14 @@ $user_text = $_GET["userText"];
     
     <body>
         <div class="m-4">
-            <h3>Length of your text: <span> <?php echo strlen($user_text); ?> </span></h3>
-            <p><?php echo $user_word . " " . $user_text; ?></p>
+            <h3 class="mb-3">Length of your text: <span> <?php echo strlen($user_text); ?> </span></h3>
+
+            <h3 class="mb-3">Word to censure: <span> <?php echo $user_word; ?> </span></h3>
+            
+            <div class="mb-3">
+                <h3>This is your censored text:</h3>
+                <p class="mx-5"><?php echo str_ireplace($user_word, "***", $user_text); ?></p>
+            </div>
         </div>
        
 
